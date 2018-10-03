@@ -1,11 +1,35 @@
-// public class Percolation {
-//    public Percolation(int n)                // create n-by-n grid, with all sites blocked
-//    public void open(int row, int col)    // open site (row, col) if it is not open already
-//    public boolean isOpen(int row, int col)  // is site (row, col) open?
-//    public boolean isFull(int row, int col)  // is site (row, col) full?
-//    public     int numberOfOpenSites()       // number of open sites
-//    public boolean percolates()              // does the system percolate?
-// }
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
+public class Solution {
+	
+	  public static void main(String[] args) throws FileNotFoundException {
+		 // File file = new File("/msit2018-20/src/input000.txt");
+		  Scanner sc=new Scanner(System.in);
+	     WeightedQuickUnionPathCompressionUF unionFind;
+	  int h=sc.nextInt();
+	  System.out.println("h"+h);
+	     Percolation p = new Percolation(h);
+		/*System.out.println("Bottom virtual site position "
+				+ p.bottomVS);
+		System.out.println("Does it percolates? " + p.percolates());
+		System.out.println("Grid lenght " + p.grid.length);
+	//	int m=sc.nextInt();*/
+		while(sc.hasNext())
+		{
+			int p1=sc.nextInt();
+			int q=sc.nextInt();
+			// System.out.println("p1"+p1+"---q"+q);
+			p.open(p1, q);
+			
+			
+		}
+		
+        System.out.println(p.percolates());
 
-// You can implement the above API to solve the problem
+	         
+	        }
+	        
+	    }
+
