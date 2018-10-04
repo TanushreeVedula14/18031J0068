@@ -1,0 +1,156 @@
+
+class ADS
+{
+  int[] id;
+  public ADS(int N)
+  {
+	id = new int[N];
+	for(int i=0;i<N;i++)
+	{
+		id[i]=i;
+	}
+  }
+  public boolean connected(int p,int q)
+  {
+	  return id[p]==id[q];
+  }
+  public void print()
+  {
+	for(int i=0;i<id.length;i++)
+	{
+		System.out.print("\t"+id[i]);
+	}
+  }
+  public void union(int p,int q)
+  {
+	  int k=0;
+	  int pid=id[p];
+	  int qid=id[q];
+	  for(int i=0;i<id.length;i++)
+	  {
+		  k++;
+		  if( id[i]==pid)
+		  {
+			  id[i]=qid;
+		  }
+	  }
+  }
+  public int root(int i)
+  {
+	while(i!=id[i])
+	{
+		i=id[i];
+	}
+	return i;
+  }
+  public boolean connect(int p,int q)
+  {
+	return root(p)==root(q);
+  }
+  public void unionqu(int p, int q)
+  {
+	int i =root(p);
+	int j= root(q);
+	id[i]=j;
+  }
+  public void unionqu1(int p,int q)
+  {
+	  int[] sz = new int[10];
+	  int i=root(p);
+		//System.out.println(i);
+	  int j=root(q);
+		//System.out.println(j);
+		if(sz[i]<sz[j])
+		{
+		id[i]=j;
+		sz[j]=sz[j]+sz[i];
+		}
+		else
+		{
+			id[j]=i;
+			sz[i]=sz[i]+sz[j];
+		}
+	}
+
+}
+public  class Problem1
+{
+	public static void main(String[] args)
+	{
+		System.out.println("QUICK FIND");
+		ADS d = new ADS(10);
+		d.union(9,0);
+		d.print();
+		System.out.println("\n");
+		d.union(3,4);
+		d.print();
+		System.out.println("\n");
+		d.union(5,8);
+		d.print();
+		System.out.println("\n");
+		d.union(7,2);
+		d.print();
+		System.out.println("\n");
+		d.union(2,1);
+		d.print();
+		System.out.println("\n");
+		d.union(5,7);
+		d.print();
+		System.out.println("\n");
+		d.union(0,3);
+		d.print();
+		System.out.println("\n");
+		d.union(4,2);
+		d.print();
+		System.out.println("\n\n\n QUICK UNION");
+		ADS d1 = new ADS(10);
+		d1.unionqu(9,0);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(3,4);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(5,8);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(7,2);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(2,1);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(5,7);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(0,3);
+		d1.print();
+		System.out.println("\n");
+		d1.unionqu(4,2);
+		d1.print(); 
+		System.out.println("\n\n\n Weighted Quick union");
+		ADS d2=new ADS(10);
+		d2.unionqu1(9,0);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(3,4);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(5,8);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(7,2);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(2,1);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(5,7);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(0,3);
+		d2.print();
+		System.out.println("\n");
+		d2.unionqu1(4,2);
+		d2.print(); 
+	}
+}
