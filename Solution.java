@@ -1,13 +1,16 @@
-package com.m_3.pairs;
+package com.m_3.binarySearch;
+
+import java.util.Scanner;
 
 public class Solution {
 
 	public static void main(String[] args) 
 	{
-		// TODO Auto-generated method stub
-		Pairs p = new Pairs();
-		p.pair();
-
+		Scanner sc = new Scanner(System.in);
+		Binary b = new Binary();
+		
+		
+		b.binarySearch();
 	}
 
 }
