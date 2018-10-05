@@ -63,7 +63,7 @@ class MergeArray
       {
     	  //System.out.print(B[j]+" ");
     	  C[j] = B[j];
-    	  System.out.print(C[j]+",");
+    	  System.out.print(","+C[j]+"");
     	  j++;
       }
 	return 0;
