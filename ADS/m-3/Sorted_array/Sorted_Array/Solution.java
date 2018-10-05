@@ -1,3 +1,5 @@
+package com.m_3.sorted_array;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -57,12 +59,15 @@ class MergeArray
     	  System.out.print(C[i]+",");
     	  i++;
       }
+     // System.out.print(",");
       while(j < n) 
       {
     	  //System.out.print(B[j]+" ");
     	  C[j] = B[j];
-    	  System.out.print(","+C[j]+"");
+    	  
+    	  System.out.print(C[j]+",");
     	  j++;
+    	  
       }
 	return 0;
              
