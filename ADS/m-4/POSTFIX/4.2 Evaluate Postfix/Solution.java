@@ -1,62 +1,50 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Stack; 
+import java.util.*;
 
-public class Solution  
-{ 
-    // Method to evaluate value of a postfix expression 
-    static int evaluatePostfix(String exp) 
-    { 
-        //create a stack 
-        Stack<Integer> stack=new Stack<>(); 
-          
-        // Scan all characters one by one 
-        for(int i=0;i<exp.length();i++) 
-        { 
-            char c=exp.charAt(i); 
-              
-            // If the scanned character is an operand (number here), 
-            // push it to the stack. 
-            if(Character.isDigit(c)) 
-            stack.push(c - '0'); 
-              
-            //  If the scanned character is an operator, pop two 
-            // elements from stack apply the operator 
-            else
-            { 
-                int val1 = stack.pop(); 
-                int val2 = stack.pop(); 
-                  
-                switch(c) 
-                { 
-                    case '+': 
-                    stack.push(val2+val1); 
-                    break; 
-                      
-                    case '-': 
-                    stack.push(val2- val1); 
-                    break; 
-                      
-                    case '/': 
-                    stack.push(val2/val1); 
-                    break; 
-                      
-                    case '*': 
-                    stack.push(val2*val1); 
-                    break; 
-              } 
-            } 
-        } 
-        return stack.pop();     
-    } 
-      
-    // Driver program to test above functions 
-    public static void main(String[] args) throws IOException  
-    { 
+public class Solution 
+{
+    public static int postfixEvaluate(String exp) 
+    {
+	 	Stack<Integer> s = new Stack<Integer> ();
+		Scanner tokens = new Scanner(exp);
+		
+		while (tokens.hasNext()) 
+		{
+			if (tokens.hasNextInt()) 
+			{
+				s.push(tokens.nextInt());
+			} 
+			else 
+			{
+				int num2 = s.pop();
+				int num1 = s.pop();
+				String op = tokens.next();
+				
+				if (op.equals("+")) 
+				{
+					s.push(num1 + num2);
+				} 
+				else if (op.equals("-")) 
+				{
+					s.push(num1 - num2);
+				} 
+				else if (op.equals("*")) 
+				{
+					s.push(num1 * num2);
+				} else
+				{
+					s.push(num1 / num2);
+				}
+			}
+		}
+		return s.pop();
+    }
+    public static void main(String[] args) throws IOException 
+    {
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    	//System.out.println("Enter expression:");
-        String exp = br.readLine(); 
-        System.out.println(evaluatePostfix(exp)); 
-    } 
-} 
+    	String exp = br.readLine();
+        System.out.println(postfixEvaluate(exp));               
+    }
+}
