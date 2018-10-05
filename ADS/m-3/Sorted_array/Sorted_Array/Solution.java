@@ -1,5 +1,3 @@
-package com.m_3.sorted_array;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
