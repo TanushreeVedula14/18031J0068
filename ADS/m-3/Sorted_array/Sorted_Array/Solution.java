@@ -10,66 +10,32 @@ class MergeArray
     	int C[] = new int[m+n];
     	
     	Arrays.sort(A);
-    	/*System.out.println("Sorted A[]:\n");
-    	for(int k=0;k<m;k++)
-    	{
-    		System.out.print(A[k]+" ");
-    	}*/
-    	
     	Arrays.sort(B);
-    	/*System.out.println("\nSorted B[]:\n");
-    	for(int l=0;l<n;l++)
-    	{
-    		System.out.print(B[l]+" ");
-    	}*/
     	
     	int i = 0;
     	int j = 0;
+    	int k = 0;
       
-    	//System.out.println("\nMerged Array:\n");
-    	while (i<m && j<n) 
+    	while (i < m && j < n) 
     	{ 
-    		if (A[i] < B[j]) 
-    		{
-    			//System.out.print(A[i]+" ");
-    			C[i] = A[i];
-    			System.out.print(C[i]+",");
-    			i++;
-    		}
-    		else if(B[j] < A[i]) 
-    		{
-    			//System.out.print(B[j]+" ");
-    			C[j] = B[j];
-    			System.out.print(C[j]+",");
-    			j++;
-    		}
+    		C[k++] = A[i++]; 
+	        C[k++] = B[j++]; 
+	    } 
+    	while (i < m) 
+            C[k++] = A[i++]; 
+    	
+    	while (j < n) 
+            C[k++] = B[j++]; 
+    	
+    	for(k=0;k<(m+n);k++)
+    	{
+    		if(k<(m+n-1))
+    		System.out.print(C[k]+",");
     		else
-    		{ 
-    			//System.out.print(B[j]+" "); 
-    			C[j] = B[j];
-    			System.out.print(C[j]+",");
-    			j++;
-    			i++; 
-    		} 
-      } 
-      while(i < m) 
-      {
-    	  //System.out.print(A[i]+" ");
-    	  C[i] = A[i];
-    	  System.out.print(C[i]+",");
-    	  i++;
-      }
-     // System.out.print(",");
-      while(j < n) 
-      {
-    	  //System.out.print(B[j]+" ");
-    	  C[j] = B[j];
-    	  
-    	  System.out.print(C[j]+",");
-    	  j++;
-    	  
-      }
-	return 0;
+    			System.out.println(C[k]);
+    	}
+    	
+      return 0;
              
     } 
 } 
