@@ -1,4 +1,3 @@
-package com.m_3.a2;
 
 	import java.io.*;
 
