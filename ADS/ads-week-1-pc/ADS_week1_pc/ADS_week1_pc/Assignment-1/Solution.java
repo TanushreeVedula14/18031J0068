@@ -1,5 +1,3 @@
-package com.w1.pc;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
