@@ -1,70 +1,36 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
 
-class AddLinkedList
-{
-	Node head;
-	
-	class Node
-	{
-		Node next;
-		long data;
-		int size;
-		
-		Node(long d)
-		{
-			data = d;
-			next = null;
-			size = 0;
-		}
-		
-		
-	}
-	
-	Node numberToDigits(String number)
-	{
-		
-			long m = Integer.parseInt(number);
-			Node new_node = new Node(m);
-			new_node.next = head;
-			head = new_node;
-		
-		return head;
-	}
-	
-	public void display()
-	{
-		Node n = head;
-		while(n != null)
-		{
-			System.out.println(n.data);
-			n = n.next;
-		}
-		
-	}
-
-}
-class Solution 
+public class Solution 
 {
 
 	public static void main(String[] args) throws IOException 
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		AddLinkedList all = new AddLinkedList();
+		LinkedList<String> ll = new LinkedList<String>();
 		
-		System.out.println("Enter string:");
+		//System.out.println("Enter string:");
 		String line = br.readLine();
 		
-		System.out.println("Enter string1:");
+		//System.out.println("Enter string1:");
 		String line1 = br.readLine();
+
+		ll.add(line);
+		ll.add(line1);
 		
+		LinkedList<String> ll1 = new LinkedList<String>();
+		ll1.addAll(ll);
+		ll1.addAll(ll);
 		
-		
-		all.numberToDigits(line1);
-		all.numberToDigits(line);
-		
-		all.display();
+		//System.out.println("Linked List:");
+		for(String ll2:ll)
+		{
+			System.out.println(ll2);
+		}
+
 		
 	}
 
