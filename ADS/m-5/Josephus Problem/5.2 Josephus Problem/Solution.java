@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -97,25 +98,27 @@ public class Solution
 		while(j <= input)
 		{
 			//System.out.println("\nEnter m:");
-			//String m = br.readLine();
-			int m = Integer.parseInt(br.readLine());
-			//String w1[] = m.split(" ");
+			String m = br.readLine();
+			String w[] = m.split(" ");
+			int k=Integer.parseInt(w[0]);
+			int l=Integer.parseInt(w[1]);
 			
-			for(int i=0;i<m;i++)
+			for(int i=0;i<k;i++)
 			{
+				//System.out.println("123");
 				q.enqueue(i);
 			}
-		
-			//System.out.println("\nEnter n:");
-			int n = Integer.parseInt(br.readLine());
+			
 			while(!q.isEmpty())
 			{
-				for(int i=0;i<n-1;i++)
+				//System.out.println(w1[1]);
+				for(int i=0;i<l-1;i++)
 				{
 					q.enqueue(q.dequeue());
 					System.out.print(q.dequeue()+" ");
 				}
 			}
+			System.out.println("\n");
 		}
 		
 		
