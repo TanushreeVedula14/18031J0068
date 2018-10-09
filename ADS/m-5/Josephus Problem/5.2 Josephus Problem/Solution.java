@@ -118,7 +118,7 @@ public class Solution
 					System.out.print(q.dequeue()+" ");
 				}
 			}
-			System.out.println("\n");
+			System.out.println();
 		}
 		
 		
