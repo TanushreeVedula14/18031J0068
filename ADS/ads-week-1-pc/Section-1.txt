@@ -1,0 +1,38 @@
+Name: V. Tanushree
+
+Roll No- 18031J0068
+
+
+Section - 1:
+
+Answer-1: 0 1 0 0 1 0
+
+Answer-2: Cricket is hobby a of playing mentor
+
+Answer-3: a, d, e
+
+Answer-4: 1 1 1 1 1 1 1 1 1 1 
+
+Answer-5: {[]()}
+		
+	   push-"{"	{	size=1;
+
+	   push-"["	{ [ 	size=2;
+
+	   pop		{	size=1;
+
+	   push-"("	{ (	size=2;
+
+	   pop		{	size=1;
+
+	   pop			size=0;
+
+Answer-6: N logN
+
+Answer-7: N logN
+
+Answer-8: N
+
+Answer-9: N^2
+
+Answer-10: 1 1 1 1 1 1 1 1 1 1 

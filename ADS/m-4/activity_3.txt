@@ -1,0 +1,31 @@
+1. What is a linked list?
+	Linked list is a linear data structure, in which elements are stored in a contiguous memory location. The elements in a linked list are linked using pointers.
+2. Why linked list?
+	In array, the size will be fixed when we declare array size and if we want to increase size, we have to double the size. Whereas in linked list, we can increase the size when we want. There is no fixed size to linked list.
+3. Method in Linked List.
+boolean add(Object item);
+void add(int index, Object item);
+boolean addAll(Collection c);
+boolean addAll(int index, Collection c);
+void addFirst(Object item);
+void addLast(Object item);
+void clear();
+Object clone();
+boolean contains(Object item);
+Object get(int index);
+Object getFirst();
+Object getLast();
+int indexOf(Object item);
+int lastIndexOf(Object item);
+Object poll();
+Object pollFirst();
+Object pollLast();
+Object remove();
+Object remove(int index);
+Object remove(Object obj);
+Object removeFirst();
+Object removeLast();
+Object removeFirstOccurrence(Object item);
+Object removeLastOccurrence(Object item);
+Object set(int index, Object item);
+int size();

@@ -5,14 +5,14 @@
 
 		public static void main(String[] args)throws Exception {
 			// TODO Auto-generated method stub
-	     int[] a=null;
-	     int[] b=null;
+	     int[] A=null;
+	     int[] B=null;
 	     int n,m;
 	    
 		 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-	     //System.out.println("enter number of elements in first array");
+	     //System.out.println("Enter number of elements in first array");
 	    String s1=br.readLine();
-	     //System.out.println("enter number of elements in second array");
+	     //System.out.println("Enter number of elements in second array");
 	     String s2=br.readLine();
 	     n=Integer.parseInt(s1);
 	     m=Integer.parseInt(s2);
@@ -20,8 +20,8 @@
 	String w1[]=null;
 	String w2[]=null;
 
-	     a=new int[n];
-	     b=new int[m];
+	     A=new int[n];
+	     B=new int[m];
 	String s=br.readLine();
 	//System.out.println(s);
 	String s3=br.readLine();
@@ -35,52 +35,52 @@
 	     {
 	    	 //System.out.println("a["+i+"]");
 	    	 
-	    	 a[i]=Integer.parseInt(w1[i]);
+	    	 A[i]=Integer.parseInt(w1[i]);
 	    	 
 	     }
 	     for(int j=0;j<m;j++)
 	     {
 	    	// System.out.println("b["+j+"]");
 	    	 //String s=sc.next();
-	    	 b[j]=Integer.parseInt(w2[j]);
+	    	 B[j]=Integer.parseInt(w2[j]);
 	     }
-	     int[] c;
+	     int[] C;
 	     int i=0,j=0,k=0;
-	     c=new int[m+n];
-	     while(i<a.length&&j<b.length)
+	     C=new int[m+n];
+	     while(i<A.length&&j<B.length)
 	     {
-		   if(a[i]>b[j])
+		   if(A[i]>B[j])
 		   {
-			   c[k]=b[j];
+			   C[k]=B[j];
 			   k++;
 			   j++;
 		   }
 		   else
 		   {
-			   c[k]=a[i];
+			   C[k]=A[i];
 			   k++;
 			   i++;
 		   }
 	      }
-	     while(i<a.length)
+	     while(i<A.length)
 	     {
-	    	 c[k]=a[i];
+	    	 C[k]=A[i];
 	    	 k++;
 	    	 i++;
 	     }
-	     while(j<b.length)
+	     while(j<B.length)
 	     {
 	    	 c[k]=b[j];
 	    	 k++;
 	    	 j++;
 	     }
 	     //System.out.println("after sorting");
-	     for(k=0;k<c.length;k++)
+	     for(k=0;k<C.length;k++)
 	     {
-	         if(k<c.length-1)
-	    	 System.out.print(c[k]+",");
+	         if(k<C.length-1)
+	    	 System.out.print(C[k]+",");
 	         else
-	       System.out.print(c[k]);
+	       System.out.print(C[k]);
 	     }
 
 		}
