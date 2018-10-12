@@ -1,184 +1,153 @@
+package com.m_7.stack_queue;
+
 import java.util.Scanner;
 
-
-class Deque
+class Steque
 {
-    
-    int elements;
-    Node first;
-    Node last;
-    
-    class Node
-    {
-    	String data;
-        Node next;
-        
-        Node(String val,Node link)
-        {
-            this.data = val;
-            this.next = link;
-        }
-    }
-    
-    Deque()
-    {
-        elements = 0;
-        first = null;
-        last = null;
-    }
-   
-    public void pushLeft(String value)
-    {
-        if(first==null) 
-        {
-            first=new Node(value,null);
-            last=first;
-        } 
-        else
-        {
-            Node newnode=new Node(value,first);
-             first=newnode;
-        }
+	Node front;
+	Node rear;
+	int size;
+	
+	class Node
+	{
+		String data;
+		Node next;
+		
+		Node(String d, Node n)
+		{
+			data = d;
+			next = n;
+		}
 
-        elements++;
-    }
-    
-    public void pushRight(String value) 
+	}
+	
+	Steque() 
+	{
+		front = null;
+		rear = null;
+		size = 0;
+	}
+	
+	int size() 
     {
-        if (last==null)
-        {
-            last=new Node(value,null);
-            
-            first=last;
-        } 
-        else 
-        {
-            Node newnode=new Node(value, null);
-            
-            last.next=newnode;
-            last=newnode;
-        }
-        elements++;
-    }
-    
-    void popLeft() 
-    {
-        if(first!=null) 
-        {
-            Node popped=first;
-            first=first.next;
-            popped.data=null;
-            popped.next=null;
-            elements--;
-        }
-    }
-    
-    void popRight()
-    {
-        if (last!=null) 
-        {
-            Node temp=null;
-            Node popped=last;
-            Node element=first;
-            while(element!=last)
-            {
-                temp=element;
-                element=element.next;
-            }
-            last = temp;
-            last.next=null;
-            popped.data=null;
-            popped.next=null;
-            elements--;
-        }
-    }
-    
-    int size() 
-    {
-        return elements;
+        return size;
     }
     
     boolean isEmpty()
     {
-        return first==null;
+        return front==null;
     }
-    
-    public String print() 
-    {
-        if (elements != 0) 
+
+	public void push(String data)
+	{
+		Node n = new Node (data, null);
+		
+        if (front == null)
         {
-            String str = "";
-            Node temp = first;
-            while (temp != null) 
-            {
-                str += temp.data + ", ";
-                temp = temp.next;
-            }
-            return "[" +str.substring(0,str.length()-2)+ "]";
+        	front = n;
+        	front.next = null;
+        	rear = n;
         }
-        return "[]";
-
-    }
-
+        else
+        {
+            n.next = front;
+            front = n;
+        }
+        
+        //System.out.println("\nPush:"+data);
+        size++;
+		
+	}
+	
+	public void enqueue(String data)
+	{
+		Node n = new Node(data, null);
+		
+		if(rear == null)
+		{
+			front = n;
+			rear = n;
+		}
+		
+		rear.next = n;
+		rear = n;
+		
+		//System.out.println("Enqueue:"+data);
+		size++;
+	}
+	
+	public void pop()
+	{
+		if(front != null)
+		{
+			Node n =front;
+			front = front.next;
+			//System.out.println("pop:"+n.data);
+			size--;
+			//return n.data;
+		}
+	}
+	
+	public String print() 
+    {
+		//System.out.println("Print");
+		 if (size != 0) 
+	     {
+	        String str = "";
+	        Node temp = front;
+	        while (temp != null) 
+	        {
+	           str += temp.data + ", ";
+	           temp = temp.next;
+	        }
+	        
+	        System.out.print("\n");
+	        return str.substring(0,str.length()-2);
+	     }
+	     return "";
+     }
+	
 }
-
-class Solution
+public class Solution 
 {
-    
-    
-    public static void main(final String[] args)
-    {
-        Scanner sc=new Scanner(System.in);
-       // System.out.println("No. of operations:");
-        int n=sc.nextInt();
-        sc.nextLine();
-        Deque d=new Deque();
-        for(int i=0;i<n;i++)
-        {
-            String input[] = sc.nextLine().split(" ");
-            switch (input[0]) 
-            {
-            	case "pushLeft":
-            			d.pushLeft(input[1]);
-            			System.out.println(d.print());
-            			break;
-            	case "pushRight":
-            			d.pushRight(input[1]);
-            			System.out.println(d.print());
-            			break;
-            	case "popLeft":
-            			if(!d.isEmpty()) 
-            			{
-            				d.popLeft();
-            				System.out.println(d.print());
-            			} 
-            			else 
-            			{
-            				System.out.println("Deck is empty");
-            			}
-            			break;
-            	case "popRight":
-            			if (!d.isEmpty())
-            			{
-            				d.popRight();
-            				System.out.println(d.print());
-            			} 
-            			else
-            			{
-            				System.out.println("Deck is empty");
-            			}
-            			break;
-            	case "size":
-            			System.out.println(d.size());
-            			break;
-            	case "isEmpty":
-            			System.out.println(d.isEmpty());
-            			break;
-            	default:
-            			break;
 
-            }
-        }
-        sc.close();
-    }
+	public static void main(String[] args)
+	{
+			Scanner sc=new Scanner(System.in);
+			
+			//System.out.println("No. of operations:");
+	        int n=sc.nextInt();
+	          
+	        String str = sc.nextLine();
+	        
+	        Steque sq=new Steque();
+	        
+	        while(str != null)
+	        {
+	        	String input[] = sc.nextLine().split(" ");
+	            switch (input[0]) 
+	            {
+	            	case "push":	sq.push(input[1]);
+	            					System.out.println(sq.print());
+	            					break;
+	            	case "enqueue":	sq.enqueue(input[1]);
+	            					System.out.println(sq.print());
+	            					break;
+	            	case "pop":		if(!sq.isEmpty())
+	            					{
+	            						sq.pop();
+	            						System.out.print(sq.print());
+	            					}
+	            					else
+	            					{
+	            						System.out.println("Steque is empty.");
+	            					}
+	            					break;
+	            	default:
+	            					break;
+
+	            }
+	        }
+	        sc.close();
+	}
 }
