@@ -82,8 +82,8 @@ class Steque
 		{
 			Node n =front;
 			front = front.next;
-			n.data = null;
-			n.next = null;
+			//n.data = null;
+			//n.next = null;
 			size--;
 		}
 	}
