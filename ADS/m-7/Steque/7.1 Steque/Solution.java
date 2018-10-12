@@ -1,3 +1,7 @@
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 class Steque
@@ -33,7 +37,7 @@ class Steque
     
     boolean isEmpty()
     {
-        return front==null;
+        return size==0;
     }
 
 	public void push(String data)
@@ -51,8 +55,6 @@ class Steque
             n.next = front;
             front = n;
         }
-        
-        //System.out.println("\nPush:"+data);
         size++;
 		
 	}
@@ -61,68 +63,76 @@ class Steque
 	{
 		Node n = new Node(data, null);
 		
-		if(rear == null)
+		if(rear == null||front==null)
 		{
 			front = n;
 			rear = n;
+			size++;
+			return;
 		}
 		
 		rear.next = n;
 		rear = n;
 		
-		//System.out.println("Enqueue:"+data);
 		size++;
 	}
 	
 	public void pop()
 	{
-		if(front != null)
+		if(size != 0)
 		{
 			Node n =front;
 			front = front.next;
-			//System.out.println("pop:"+n.data);
+			n.data = null;
+			n.next = null;
 			size--;
-			//return n.data;
 		}
 	}
 	
 	public String print() 
     {
-		//System.out.println("Print");
+		//System.out.println(size);
 		 if (size != 0) 
 	     {
 	        String str = "";
 	        Node temp = front;
 	        while (temp != null) 
 	        {
-	           str += temp.data + ", ";
+	           str = str + temp.data + ", ";
 	           temp = temp.next;
 	        }
+	        //System.out.println(str);
 	        
-	        System.out.print("\n");
 	        return str.substring(0,str.length()-2);
 	     }
-	     return "";
+		 else
+		 {
+	     return "Steque is empty.";
+		 }
      }
 	
 }
 public class Solution 
 {
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
-			Scanner sc=new Scanner(System.in);
-			
 			//System.out.println("No. of operations:");
-	        int n=sc.nextInt();
-	          
-	        String str = sc.nextLine();
-	        
-	        Steque sq=new Steque();
-	        
-	        while(str != null)
+	       
+	       String str="";
+	       BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	       int n=Integer.parseInt(br.readLine());
+	      
+	    	 while(n>0)  
+	    	 {
+	    		 str=br.readLine(); 
+	    		 Steque sq=new Steque();
+	        while(str.length()>0)
 	        {
-	        	String input[] = sc.nextLine().split(" ");
+	        	
+	        	//System.out.println(str);
+	        	String input[]=str.split(" ");
+	        	//String input[] = sc.nextLine().split(" ");
 	            switch (input[0]) 
 	            {
 	            	case "push":	sq.push(input[1]);
@@ -131,21 +141,24 @@ public class Solution
 	            	case "enqueue":	sq.enqueue(input[1]);
 	            					System.out.println(sq.print());
 	            					break;
-	            	case "pop":		if(!sq.isEmpty())
+	            	case "pop":		if(sq.size != 0)
 	            					{
 	            						sq.pop();
-	            						System.out.print(sq.print());
+	            						System.out.println(sq.print());
 	            					}
 	            					else
 	            					{
-	            						System.out.println("Steque is empty.");
+	            						System.out.print("Steque is empty.");
 	            					}
 	            					break;
 	            	default:
 	            					break;
 
 	            }
+	            str=br.readLine();
+	            
 	        }
-	        sc.close();
+	        n--;
+	    	 }
 	}
 }
