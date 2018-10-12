@@ -1,7 +1,7 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 class Steque
 {
@@ -125,8 +125,10 @@ public class Solution
 	    	 while(n>0)  
 	    	 {
 	    		 str=br.readLine(); 
+	    		 //System.out.println(str);
 	    		 Steque sq=new Steque();
-	    		 System.out.println("\n");
+	    		 //System.out.println(sq);
+	    		 System.out.print("\n");
 	    		 while(str.length()>0)
 	    		 {
 	        	
@@ -150,13 +152,12 @@ public class Solution
 	            							System.out.print("\nSteque is empty.");
 	            						}
 	            						break;
-	    			 	default:
-	            						break;
-
 	    			 }
-	    			 str=br.readLine();
-	            
-	    		 }
+	    			 if((str=br.readLine()) != null)
+	    			 	continue;
+	    			 else
+	    			 	break;	
+	    	}
 	    		 n--;
 	    	 }
 	}
