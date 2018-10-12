@@ -126,14 +126,9 @@ public class Solution
 	    	 while(n>0)  
 	    	 {
 	    		 str=br.readLine(); 
-	    		 //System.out.println(str);
 	    		 Steque sq=new Steque();
-	    		 //System.out.println(sq);
-	    		// System.out.print("\n");
 	    		 while(str.length()>0)
 	    		 {
-	        	
-	    			 //System.out.println(str);
 	    			 String input[]=str.split(" ");
 	    			 switch (input[0]) 
 	    			 {
@@ -150,7 +145,7 @@ public class Solution
 	            						}
 	            						else
 	            						{
-	            							System.out.print("\nSteque is empty.");
+	            							System.out.print("Steque is empty.");
 	            						}
 	            						break;
 	    			 }
