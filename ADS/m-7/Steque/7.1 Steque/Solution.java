@@ -1,4 +1,5 @@
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -128,7 +129,7 @@ public class Solution
 	    		 //System.out.println(str);
 	    		 Steque sq=new Steque();
 	    		 //System.out.println(sq);
-	    		 System.out.print("\n");
+	    		// System.out.print("\n");
 	    		 while(str.length()>0)
 	    		 {
 	        	
