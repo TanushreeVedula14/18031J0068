@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -145,7 +144,7 @@ public class Solution
 	            						}
 	            						else
 	            						{
-	            							System.out.print("Steque is empty.");
+	            							System.out.print("Steque is empty.\n");
 	            						}
 	            						break;
 	    			 }
