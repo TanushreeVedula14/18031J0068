@@ -1,5 +1,3 @@
-package com.m_7.stack_queue;
-
 import java.util.Scanner;
 
 class Steque
