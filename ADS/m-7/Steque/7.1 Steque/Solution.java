@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -125,7 +126,6 @@ public class Solution
 	    	 {
 	    		 str=br.readLine(); 
 	    		 Steque sq=new Steque();
-	    		 System.out.println();
 	    		 while(str.length()>0)
 	    		 {
 	    			 String input[]=str.split(" ");
@@ -151,8 +151,9 @@ public class Solution
 	    			 if((str=br.readLine()) != null)
 	    			 	continue;
 	    			 else
-	    			 	break;	
+	    			 	break;
 	    	}
+	    		 System.out.println();
 	    		 n--;
 	    	 }
 	}
