@@ -1,3 +1,4 @@
+package com.m_7.stack_queue;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -127,38 +128,38 @@ public class Solution
 	    	 {
 	    		 str=br.readLine(); 
 	    		 Steque sq=new Steque();
-	        while(str.length()>0)
-	        {
+	    		 System.out.println("\n");
+	    		 while(str.length()>0)
+	    		 {
 	        	
-	        	//System.out.println(str);
-	        	String input[]=str.split(" ");
-	        	//String input[] = sc.nextLine().split(" ");
-	            switch (input[0]) 
-	            {
-	            	case "push":	sq.push(input[1]);
-	            					System.out.println(sq.print());
-	            					break;
-	            	case "enqueue":	sq.enqueue(input[1]);
-	            					System.out.println(sq.print());
-	            					break;
-	            	case "pop":		if(sq.size != 0)
-	            					{
-	            						sq.pop();
+	    			 //System.out.println(str);
+	    			 String input[]=str.split(" ");
+	    			 switch (input[0]) 
+	    			 {
+	    			 	case "push":	sq.push(input[1]);
 	            						System.out.println(sq.print());
-	            					}
-	            					else
-	            					{
-	            						System.out.print("Steque is empty.");
-	            					}
-	            					break;
-	            	default:
-	            					break;
+	            						break;
+	    			 	case "enqueue":	sq.enqueue(input[1]);
+	            						System.out.println(sq.print());
+	            						break;
+	    			 	case "pop":		if(sq.size != 0)
+	            						{
+	            							sq.pop();
+	            							System.out.println(sq.print());
+	            						}
+	            						else
+	            						{
+	            							System.out.print("\nSteque is empty.");
+	            						}
+	            						break;
+	    			 	default:
+	            						break;
 
-	            }
-	            str=br.readLine();
+	    			 }
+	    			 str=br.readLine();
 	            
-	        }
-	        n--;
+	    		 }
+	    		 n--;
 	    	 }
 	}
 }
