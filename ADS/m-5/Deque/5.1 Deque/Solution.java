@@ -1,9 +1,6 @@
-package com.m_5.ass1;
 
 import java.util.Scanner;
-/**
- * Class for deque.
- */
+
 class Deque
 {
     
