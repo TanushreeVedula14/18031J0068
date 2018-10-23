@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,21 +9,18 @@ class Selection
 	{
 		int size = A.length;
 		
-		for(int i=0;i<size;i++)
+		for(int i=1;i<size;i++)
 		{
-			int index = i;
+			char index = A[i];
+			int j=i;
 			
-			for(int j=i+1;j<size;j++)
+			while(j>0 && A[j-1]>index)
 			{
-				if(A[j]<A[index])
-				{
-					index = j;
-				}
+				A[j] = A[j-1];
+				j--;
 			}
 			
-			char temp = A[index];
-			A[index] = A[i];
-			A[i] = temp;
+			A[j]= index;
 			
 			System.out.println(Arrays.toString(A));
 		}
