@@ -10,14 +10,35 @@ class Merge
 	
 	public void sort(int A[],int s,int e)
 	{
-		if(s<e)
+		int m=0;
+		if(e-s < sortArray)
 		{
-			int m = (s+e)/2;
+			int size = A.length;
+			
+			for(int i=0;i<size;i++)
+			{
+				int index = A[i];
+				int j = 0;
+				
+				for(j=i-1;j>=0 && A[j]>index; j--)
+				{
+					A[j+1] = A[j];
+				}
+				A[j+1] = index;
+			}
+			System.out.println("Insertion sort method invoked...");
+		}
+		//if(s<e)
+		else
+		{
+			m = (s+e)/2;
 			
 			sort(A,s,m);
 			sort(A,m+1,e);
 			merge(A,s,m,e);
+			//System.out.println("Array is already sorted. So, skipped the call to merge...");
 		}
+		
 		
 	}
 	
@@ -38,7 +59,22 @@ class Merge
 			R[j] = A[m+1+j];
 		}
 		
-		int i=0;
+		/*int size = A.length;
+		
+		for(int i=0;i<size;i++)
+		{
+			int index = A[i];
+			int j = 0;
+			
+			for(j=i-1;j>=0 && A[j]>index; j--)
+			{
+				A[j+1] = A[j];
+			}
+			A[j+1] = index;
+			//System.out.println(Arrays.toString(A));
+		}*/
+		
+		/*int i=0;
 		int j=0;
 		int k=s;
 		
@@ -69,7 +105,7 @@ class Merge
 			A[k] = R[j];
 			j++;
 			k++;
-		}
+		}*/
 		
 	}
 	
