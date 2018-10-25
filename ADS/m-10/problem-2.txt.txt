@@ -1,0 +1,20 @@
+public int triangle(int rows) 
+{
+  if(rows == 0)
+  {
+    return 0;
+  }
+  return rows + triangle(rows-1);
+}
+
+Answer the following question when triangle method is called with different parameters.
+
+triangle(3)-6
+
+triangle(2)-3
+
+triangle(6)-21
+
+triangle(4)-10
+
+triangle(7)-28

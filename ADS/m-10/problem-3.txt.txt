@@ -1,0 +1,21 @@
+public int bunnyEars(int bunnies)
+{
+  if(bunnies == 0)
+     return 0;
+  if(bunnies % 2 == 1)
+     return 2 + bunnyEars(bunnies-1);
+
+  return 3 + bunnyEars(bunnies-1);
+}
+
+Answer the following question when bunnyEars method is called with different parameters.
+
+bunnyEars(0)-0
+
+bunnyEars(2)-5
+
+bunnyEars(4)-10
+
+bunnyEars(5)-12
+
+bunnyEars(10)-25
