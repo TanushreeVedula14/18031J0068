@@ -174,8 +174,6 @@ class Solution
 		Scanner sc=new Scanner(System.in);
 		LinkedList ll = new LinkedList();
 		
-		System.out.println("Enter inputs:");
-		
 		while(sc.hasNext())
 		{
 			String s = sc.nextLine();
