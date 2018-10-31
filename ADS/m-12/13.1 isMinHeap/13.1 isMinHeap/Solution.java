@@ -1,268 +1,150 @@
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
-class PriorityQueue
+public class Solution
 {
-	double[] Heap;
-	double size;
-    double maxsize;
- 
-    private static final double FRONT = 1;
- 
-    PriorityQueue(double ms)
-    {
-        maxsize = ms;
-        size = 0;
-        Heap = new double[(int) (maxsize + 1)];
-        Heap[0] = Double.MIN_VALUE;
-    }
- 
-    double parent(double pos)
-    {
-        return pos / 2;
-    }
- 
-    double leftChild(double pos)
-    {
-        return (2 * pos);
-    }
- 
-    double rightChild(double pos)
-    {
-        return (2 * pos) + 1;
-    }
- 
-    boolean isLeaf(double pos)
-    {
-        if (pos >=  (size / 2)  &&  pos <= size)
-        { 
-            return true;
-        }
-        return false;
-    }
- 
-  /*  private void swap(int fpos, int spos)
-    {
-        int tmp;
-        tmp = Heap[fpos];
-        Heap[fpos] = Heap[spos];
-        Heap[spos] = tmp;
-    }*/
- 
-    void minHeapify(double pos)
-    {
-        if (!isLeaf(pos))
-        { 
-            if ( Heap[(int) pos] > Heap[(int) leftChild(pos)]  || Heap[(int) pos] > Heap[(int) rightChild(pos)])
-            {
-                if (Heap[(int) leftChild(pos)] < Heap[(int) rightChild(pos)])
-                {
-                    //swap(pos, leftChild(pos));
-                    minHeapify(leftChild(pos));
-                }else
-                {
-                    //swap(pos, rightChild(pos));
-                    minHeapify(rightChild(pos));
-                }
-            }
-        }
-    }
- 
-    void insert(double element)
-    {
-        Heap[(int) ++size] = element;
-        double current = size;
- 
-        while (Heap[(int) current] < Heap[(int) parent(current)])
-        {
-            //swap(current,parent(current));
-            current = (int) parent(current);
-        }	
-    }
- 
-    @SuppressWarnings("unused")
-	boolean print()
-    {
-        for (double i = 0; i <= size/2; i++ )
-        {
-        	if(size == 1)
-        	{
-        		System.out.println(true);
-        		return true;
-        	}
-        	else if(Heap[(int) i] < Heap[(int) ((2*i)+1)] && Heap[(int) i] < Heap[(int) ((2*i)+2)] || 
-        			Heap[(int) i] == Heap[(int) ((2 * i)+1)] && Heap[(int) i] == Heap[(int) ((2 * i)+2)])
-        	{
-        		//System.out.println(Heap[(int) i]);
-        		System.out.println(true);
-        		return true;
-        	}
-        	else
-        		//System.out.println(Heap[(int) i]);
-        		System.out.println(false);
-        		return false;
-        }
-		return false; 
-    }
- 
-    void minHeap()
-    {
-        for (double pos = (size / 2); pos >= 1 ; pos--)
-        {
-            minHeapify(pos);
-        }
-    }
- 
-    double remove()
-    {
-        double popped = Heap[(int) FRONT];
-        Heap[(int) FRONT] = Heap[(int) size--]; 
-        minHeapify(FRONT);
-        return popped;
-    }
- 
-}
 
-public class Solution 
-{
-	@SuppressWarnings("unused")
-	public static void main(String[] args) throws IOException 
+	public static void main(String[] args)
 	{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		PriorityQueue pq;
-		
-		//System.out.println("Enter Data Type:");
-		String str = br.readLine();
-		
-		switch(str)
-		{
-			case "String"   : //System.out.println("Enter no. of inputs:");
-			 				  int inputs = Integer.parseInt(br.readLine());
-			 				
-			 				  //System.out.println("Enter input:");
-			 				
-			 				  int flag = 0;
-			 				  while(flag < inputs)
-			 				  {
-			 					  String inp = br.readLine();
-			 					  int c;
-			 					  char[] ascii;
-			 					
-			 					  while(inp.length() > 0)
-			 					  {
-			 						pq = new PriorityQueue(inp.length());
-			 						String[] inp1 = inp.split(",");
-			 						String chars;
-			 						for(int i = 0;i < inp1.length;i++)
-			 						{
-			 							chars = inp1[i].substring(0, 1);
-			 							c = chars.charAt(0);
-			 							//System.out.print(c+" ");
-			 							pq.insert(c);
-			 						}
-			 						pq.minHeap();
-			 						pq.print();
-			 						break;
-			 					  }
-			 					  flag++;
-			 					  /*if((inp=br.readLine()) != null)
-		 		    			 	  continue;
-		 		    			  else
-		 		    			 	  break;*/
-			 				  }
-			 				  break;
-			case "Integer" 	: //System.out.println("No. of inputs:");
-							  inputs = Integer.parseInt(br.readLine());
-							   
-							  int ele;
-							  flag = 0;
-							  //System.out.println("Enter input:");
-				 				
-			 				  while(flag < inputs)
-			 				  {
-			 					  String inp = br.readLine();
-			 					
-			 					  while(inp.length() > 0)
-			 					  {
-			 						 String[] inp1 = inp.split(",");
-			 						 pq = new PriorityQueue(inp.length());
-			 						 for(int i = 0;i < inp1.length;i++)
-			 						 {
-			 							//System.out.println(i);
-			 							ele = Integer.parseInt(inp1[i]);
-			 							pq.insert(ele);
-			 						 }
-			 						pq.minHeap();
-			 						pq.print();
-			 						break;
-			 					  }
-			 					  flag++;
-			 					/* if((inp=br.readLine()) != null)
-		 		    			 	  continue;
-		 		    			  else
-		 		    			 	  break;*/
-			 				  }
-			 				  break;
-			case "Double"   : //System.out.println("No. of inputs:");
-			  				  inputs = Integer.parseInt(br.readLine());
-			  				  
-			  				  double ele1 = 0;
-			  				  flag = 0;
-			  				  
-							  //System.out.println("Enter input:");
-							  while(flag < inputs)
-							  {
-								  String inp = br.readLine();
-								  
-								  while(inp.length() > 0)
-								  {
-									  String[] inp1 = inp.split(",");
-									  pq = new PriorityQueue(inp.length());
-									  for(int i = 0;i < inp1.length;i++)
-									  {
-										  ele1 = Double.parseDouble(inp1[i]);
-										  pq.insert(ele1);
-									  }
-									  pq.minHeap();
-									  pq.print();
-									  break;
-								  }
-								  flag++;
-							  }
-							  break;
-			case "Float"  :   //System.out.println("No. of inputs:");
-			  				  inputs = Integer.parseInt(br.readLine());
-				  
-			  				  float ele2 = 0;
-			  				  flag = 0;
-			  
-			  				  //System.out.println("Enter input:");
-			  				  while(flag < inputs)
-			  				  {
-			  					  String inp = br.readLine();
-				  
-			  					  while(inp.length() > 0)
-			  					  {
-			  						  String[] inp1 = inp.split(",");
-			  						  pq = new PriorityQueue(inp.length());
-			  						  for(int i = 0;i < inp1.length;i++)
-			  						  {
-			  							  ele2 = Float.parseFloat(inp1[i]);
-			  							  pq.insert(ele2);
-			  						  }
-			  						  pq.minHeap();
-			  						  pq.print();
-			  						  break;
-			  					  }
-			  					  flag++;
-			  				  }
-			  				  break;
-		}
-		
-		
-		
+	Scanner s=new Scanner(System.in);
+	String s1=s.nextLine();
+	//Maxheap m1=new Maxheap();
+	switch(s1)
+	{
+	case "String":int n=s.nextInt();
+	              String s2[]=new String[n];
+	              String s01=s.nextLine();
+	              for(int i = 0;s.hasNext();i++)
+	              {
+	            	 String s3=s.next();
+	            
+	            	 String s4[]=null;
+	            	 s4=s3.split(",");
+	            	
+	            	 Minheap m=new Minheap();
+	            	System.out.println(m.sink(1,s4));
+	              }
+	              break;
+	case "Integer":
+		int n1=s.nextInt();
+        String s21[]=new String[n1];
+        String s011=s.nextLine();
+        
+        for(int i = 0;s.hasNext();i++)
+        {
+      	 String s3=s.next();
+      
+      	 String s4[]=null;
+      	 s4=s3.split(",");
+      	Double d[]=new Double[s4.length+1];
+      	for(int p=1;p<=s4.length;p++)
+      	{
+      		d[p]=Double.parseDouble(s4[p-1]);
+      	}
+      	 Minheap m=new Minheap();
+      	System.out.println(m.sink1(1,d));
+        }
+        break;
+	case "Double":
+		int n11=s.nextInt();
+        String s211[]=new String[n11];
+        String s0111=s.nextLine();
+        
+        for(int i = 0;s.hasNext();i++)
+        {
+      	 String s3=s.next();
+      
+      	 String s4[]=null;
+      	 s4=s3.split(",");
+      	Double d[]=new Double[s4.length+1];
+      	for(int p=1;p<=s4.length;p++)
+      	{
+      		d[p]=Double.parseDouble(s4[p-1]);
+      	}
+      	 Minheap m=new Minheap();
+      	System.out.println(m.sink1(1,d));
+        }
+        break;
+        
+	case "Float":
+		int n111=s.nextInt();
+        String s2111[]=new String[n111];
+        String s01111=s.nextLine();
+        
+        for(int i = 0;s.hasNext();i++)
+        {
+      	 String s3=s.next();
+      
+      	 String s4[]=null;
+      	 s4=s3.split(",");
+      	Double d[]=new Double[s4.length+1];
+      	for(int p=1;p<=s4.length;p++)
+      	{
+      		d[p]=Double.parseDouble(s4[p-1]);
+      	}
+      	 Minheap m=new Minheap();
+      	System.out.println(m.sink1(1,d));
+        }
+        break;
 	}
 
+	}
+
+}
+
+class Minheap
+{
+	
+	boolean sink(int k,String[] a)
+	{
+		boolean z = false;
+		int n=a.length-1;
+		while(2*k<=n)
+		{
+			int j=2*k;
+			if(j<n&&less(a,j+1,j))
+				j++;
+			if(!less(a,k,j))
+				{
+				
+				return false;}
+			else
+			{
+			//exch(k,j);
+			k=j;
+			 //z=false;
+			}
+		}
+		return true;
+	}
+	boolean sink1(int k,Double[] d)
+	{
+		int n=d.length-1;
+		while(2*k<=n)
+		{
+			int j=2*k;
+			if(j<n&&less1(d,j+1,j))
+				j++;
+			if(!less1(d,k,j))
+				{
+				
+				return false;}
+			else
+			{
+			//exch(k,j);
+			k=j;
+			 //z=false;
+			}
+		}
+		return true;
+	}
+	private boolean less(String[] a,int j, int i) {
+		
+		return a[j].compareTo(a[i])<=0;
+	}
+	
+	private boolean less1(Double[] d,int j, int i) {
+		System.out.println(d.length+" "+j+" "+i);
+		return d[j]<=d[i];
+	}
 }
