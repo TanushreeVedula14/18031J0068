@@ -133,15 +133,15 @@ public class Solution
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		PriorityQueue pq;
 		
-		System.out.println("Enter Data Type:");
+		//System.out.println("Enter Data Type:");
 		String str = br.readLine();
 		
 		switch(str)
 		{
-			case "String"   : System.out.println("Enter no. of inputs:");
+			case "String"   : //System.out.println("Enter no. of inputs:");
 			 				  int inputs = Integer.parseInt(br.readLine());
 			 				
-			 				  System.out.println("Enter input:");
+			 				  //System.out.println("Enter input:");
 			 				
 			 				  int flag = 0;
 			 				  while(flag < inputs)
@@ -173,12 +173,12 @@ public class Solution
 		 		    			 	  break;*/
 			 				  }
 			 				  break;
-			case "Integer" 	: System.out.println("No. of inputs:");
+			case "Integer" 	: //System.out.println("No. of inputs:");
 							  inputs = Integer.parseInt(br.readLine());
 							   
 							  int ele;
 							  flag = 0;
-							  System.out.println("Enter input:");
+							  //System.out.println("Enter input:");
 				 				
 			 				  while(flag < inputs)
 			 				  {
@@ -205,13 +205,13 @@ public class Solution
 		 		    			 	  break;*/
 			 				  }
 			 				  break;
-			case "Double"   : System.out.println("No. of inputs:");
+			case "Double"   : //System.out.println("No. of inputs:");
 			  				  inputs = Integer.parseInt(br.readLine());
 			  				  
 			  				  double ele1 = 0;
 			  				  flag = 0;
 			  				  
-							  System.out.println("Enter input:");
+							  //System.out.println("Enter input:");
 							  while(flag < inputs)
 							  {
 								  String inp = br.readLine();
@@ -232,13 +232,13 @@ public class Solution
 								  flag++;
 							  }
 							  break;
-			case "Float"  :   System.out.println("No. of inputs:");
+			case "Float"  :   //System.out.println("No. of inputs:");
 			  				  inputs = Integer.parseInt(br.readLine());
 				  
 			  				  float ele2 = 0;
 			  				  flag = 0;
 			  
-			  				  System.out.println("Enter input:");
+			  				  //System.out.println("Enter input:");
 			  				  while(flag < inputs)
 			  				  {
 			  					  String inp = br.readLine();
