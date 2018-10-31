@@ -159,7 +159,7 @@ public class Solution
 			 						{
 			 							chars = inp1[i].substring(0, 1);
 			 							c = chars.charAt(0);
-			 							System.out.print(c+" ");
+			 							//System.out.print(c+" ");
 			 							pq.insert(c);
 			 						}
 			 						pq.minHeap();
