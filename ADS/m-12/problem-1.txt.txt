@@ -1,0 +1,15 @@
+public void swim(int k)
+{
+  while((k > 1) && less(i,k))
+  {
+     exch(k,i);
+     k = i;
+   }
+}
+
+Blank 1- 1
+Blank 2- i
+Blank 3- k
+Blank 4- k
+Blank 5- i
+Blank 6- i

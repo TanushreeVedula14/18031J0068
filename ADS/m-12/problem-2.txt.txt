@@ -1,0 +1,23 @@
+private void sink(int k)
+{
+  while( 2*k <= __)
+  {
+    int j = ____;
+    if((j<___) && less(___,___))_____;
+    if(!less(___,___)) break;
+    exch(____,____);
+    k = ____;
+  }
+}
+
+Blank 1 - N
+Blank 2 - 2*k
+Blank 3 - N
+Blank 4 - j
+Blank 5 - j+1
+Blank 6 - j++;
+Blank 7 - k
+Blank 8 - j
+Blank 9 - k
+Blank 10 - j
+Blank 11 - j
