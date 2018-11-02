@@ -1,0 +1,41 @@
+sequential search ST
+
+public void put(Key key, Value val) 
+{
+        if (key == -------------) //Blank1
+		throw new IllegalArgumentException("first argument to put() is null");  
+
+        if (val == null) 
+	{
+            delete(-----------------);   //Blank2
+            return;
+        }
+        for (Node x = first; x != null; x = ------------) //Blank3
+	{ 
+            if (key.equals(-----------)) //Blank4
+	    { 
+                x.val = val;
+                return;
+            }
+        }
+        first = new Node(key, val,------------------); //Blank5
+        n++;
+    }
+
+Blank1: null
+
+
+
+Blank2:key
+
+
+
+Blank3: node.next
+
+
+
+Blank4:value
+
+
+
+Blank5:first

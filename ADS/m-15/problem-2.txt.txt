@@ -1,0 +1,32 @@
+search ST
+
+public int rank(Key key) 
+{
+        if (key == null)
+		throw new IllegalArgumentException("argument to rank() is null"); 
+
+
+        int lo = 0, hi = n-1; 
+
+        while (lo <= --------) //Blank 1
+	{  
+            int mid = lo + (hi - lo) / 2; 
+            int cmp = key.compareTo(keys[----------]);  //Blank 2
+            if      (cmp < 0) hi = mid - 1; 
+            else if (cmp > 0) lo = mid + 1; 
+            else return ---------------------; //Blank 3
+        } 
+        return lo;
+    }
+
+
+Blank1: hi
+
+
+
+Blank2: mid
+
+
+
+Blank3: mid
+
