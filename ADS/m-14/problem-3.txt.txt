@@ -4,7 +4,7 @@ Q) Draw all of the different heaps that can be made from the five keys A B C D E
    Min Heap:
 	[A,B,C,D,E]
    Max Heap:
-	[E,D,C,A,B]
+	[E,D,A,C,B]
 
    Min Heap:
 	[A,A,A,B,B]
