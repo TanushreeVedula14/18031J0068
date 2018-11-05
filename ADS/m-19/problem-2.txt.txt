@@ -1,0 +1,13 @@
+a. floor("Q") 
+b. select(5) 
+c. ceiling("Q") 
+d. rank("J") 
+e. size("D", "T") 
+f. keys("D", "T")
+
+a. J
+b. M
+c. T
+d. 4
+e. 6
+f. 3
