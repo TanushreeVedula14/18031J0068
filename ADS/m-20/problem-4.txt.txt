@@ -1,0 +1,8 @@
+
+boolean isBST(Node x)
+{
+   if(root == x)
+	return true;
+   else
+	return false;
+}

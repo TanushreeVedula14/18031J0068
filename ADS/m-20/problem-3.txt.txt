@@ -1,0 +1,13 @@
+Implementation	Worst Case	Average Case
+Linear Search	N (search)	N/2 (search)
+		N (insert)	N (insert)
+		N (delete)	N/2 (delete)
+Binary Search	Log N (search)	Log N (search)
+		N (insert)	N/2 (insert)
+		N (delete)	N/2 (insert)
+BST		N (insert)	1.39log N (insert)
+		N (insert)	1.39log N (search) 
+		N (insert)	
+2-3 Tree	Clog N (insert)	Clog N (insert)
+		Clog N (search)	Clog N (search)
+		Clog N (delete)	Clog N (delete)
