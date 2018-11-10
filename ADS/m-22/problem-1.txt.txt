@@ -1,0 +1,5 @@
+public void put(Key key, Value val)
+{
+   if(key == _____ )
+	throw new IllegalArgumentException("null");
+   if(val == null)

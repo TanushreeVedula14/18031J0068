@@ -1,0 +1,8 @@
+Is the following implementation of hashCode() legal?
+
+public int hasCode()
+{
+	return 17;
+}
+
+Ans. It's not legal because we cannot fixed the value. It can be any value of hashCode().

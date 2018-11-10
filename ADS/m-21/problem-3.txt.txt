@@ -1,0 +1,26 @@
+1.In a separate-chaining hash table with M lists and N keys, the number of compares (equality tests) for search and insert 
+  is proportional to N/M. (true/false)
+
+Ans. true
+
+2. Any good hash function should have the three properties :  (true/false)
+   a.It should be deterministic, equal keys must produce the same hash value. 
+   b.It should be efficient to compute.
+   c.It should uniformly distribute the keys.
+
+Ans. true
+
+3. How many empty lists do you expect to see when you insert keys 1, 2, 3, 4, 5, 6 into a hash table with Separate 
+   Chaining Hashing with hashCode as key % size , for size = 2 without any resizing?
+
+Ans. no empty lists.
+
+4. How many empty lists do you expect to see when you insert keys 2, 22, 32, 42, 52 into a hash table with Separate
+   Chaining Hashing with hashCode as key % size , for size = 10 without any resizing?
+
+Ans. 8 empty lists.
+
+5. How many empty lists do you expect to see when you insert keys 15, 30, 45, 60, 75 into a hash table with Separate 
+   Chaining Hashing with hashCode as key % size , for size = 15 without any resizing?
+
+Ans. 14 empty lists.
